@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizzle/question.dart';
 
 void main() {
   runApp(const Quizzle());
@@ -53,6 +54,16 @@ class _QuizPageState extends State<QuizPage> {
     true,
     true,
     false,
+  ];
+
+  List<Question> triviaBank = [
+    Question(q: 'Alexander Fleming discovered penicillin.', a: true),
+    Question(q: 'Harry Styles\' middle name is Edward.', a: true),
+    Question(q: 'There are five different blood groups.', a: false),
+    Question(q: 'There are 14 bones in a human foot.', a: false),
+    Question(q: 'Meghan Markle\'s first name is Rachel.', a: true),
+    Question(q: 'Coffee is made from berries.', a: true),
+    Question(q: 'The black box in a plane is black.', a: false),
   ];
 
   @override
