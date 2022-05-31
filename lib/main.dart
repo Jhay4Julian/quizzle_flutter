@@ -34,17 +34,7 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-
-  List<Icon> scoreKeeper = [
-    const Icon(
-      Icons.check,
-      color: Colors.green
-    ),
-    const Icon(
-      Icons.clear,
-      color: Colors.red
-    )
-  ];
+  List<Icon> scoreKeeper = [];
 
   @override
   Widget build(BuildContext context) {
@@ -52,26 +42,25 @@ class _QuizPageState extends State<QuizPage> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Expanded(
-          flex: 5,
-          child: Text('data')
-        ),
+        const Expanded(flex: 5, child: Text('Questions will go here.')),
         Expanded(
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+              });
+            },
             child: const Text('True'),
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.green
-            ),
-            ),
+            style: TextButton.styleFrom(backgroundColor: Colors.green),
+          ),
         ),
         Expanded(
           child: TextButton(
-            onPressed: () {}, 
+            onPressed: () {
+              const Icon(Icons.clear, color: Colors.red);
+            },
             child: const Text('False'),
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.red
-            ),
+            style: TextButton.styleFrom(backgroundColor: Colors.red),
           ),
         ),
         Row(
