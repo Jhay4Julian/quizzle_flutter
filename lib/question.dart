@@ -1,11 +1,11 @@
 class Question {
 
-  //triviaQuestion is q;
-  //triviaAnswer is a;
+  late String triviaQuestion;
+  late bool triviaAnswer;
 
-  String q;
-  bool a;
-
-  Question({required this.q, required this.a});
+  Question({required String q, required bool a}) {
+    triviaQuestion = q;
+    triviaAnswer = a;
+  }
 
 }
