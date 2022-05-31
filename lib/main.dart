@@ -43,6 +43,16 @@ class _QuizPageState extends State<QuizPage> {
     'The black box in a plane is black.',
   ];
 
+  List<bool> triviaAnswers = [
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    false,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
