@@ -36,6 +36,16 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
+  List<String> triviaQuestions = [
+    'Alexander Fleming discovered penicillin.',
+    'Harry Styles\' middle name is Edward.',
+    'There are five different blood groups.',
+    'There are 14 bones in a human foot.',
+    'Meghan Markle\'s first name is Rachel.',
+    'Coffee is made from berries.',
+    'The black box in a plane is black.',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,7 +75,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Row(
           children: scoreKeeper,
-        )
+        ),
       ],
     );
   }
