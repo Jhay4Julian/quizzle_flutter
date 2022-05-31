@@ -48,12 +48,18 @@ class _QuizPageState extends State<QuizPage> {
           child: TextButton(
             onPressed: () {},
             child: const Text('True'),
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.green
+            ),
             ),
         ),
         Expanded(
           child: TextButton(
             onPressed: () {}, 
-            child: const Text('False')
+            child: const Text('False'),
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.red
+            ),
             ),
         ),
       ],
