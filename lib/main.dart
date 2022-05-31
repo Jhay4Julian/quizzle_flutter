@@ -34,37 +34,17 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
-  List<String> triviaQuestions = [
-    'Alexander Fleming discovered penicillin.',
-    'Harry Styles\' middle name is Edward.',
-    'There are five different blood groups.',
-    'There are 14 bones in a human foot.',
-    'Meghan Markle\'s first name is Rachel.',
-    'Coffee is made from berries.',
-    'The black box in a plane is black.',
-  ];
-  
-  int questionNumber = 0;
-
-  List<bool> triviaAnswers = [
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-  ];
-
   List<Question> triviaBank = [
     Question(q: 'Alexander Fleming discovered penicillin.', a: true),
+    Question(q: 'The black box in a plane is black.', a: false),
     Question(q: 'Harry Styles\' middle name is Edward.', a: true),
     Question(q: 'There are five different blood groups.', a: false),
     Question(q: 'There are 14 bones in a human foot.', a: false),
     Question(q: 'Meghan Markle\'s first name is Rachel.', a: true),
     Question(q: 'Coffee is made from berries.', a: true),
-    Question(q: 'The black box in a plane is black.', a: false),
   ];
+  
+  int questionNumber = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +58,7 @@ class _QuizPageState extends State<QuizPage> {
             flex: 6,
             child: Center(
               child: Text(
-                triviaQuestions[questionNumber],
+                triviaBank[questionNumber].triviaQuestion,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 27.0,
@@ -89,6 +69,15 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             child: TextButton(
               onPressed: () {
+
+                bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
+
+                if (correctAnswer == true) {
+
+                } else {
+                  
+                }
+
                 setState(() {
                   scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
                   questionNumber++;
@@ -105,6 +94,15 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             child: TextButton(
               onPressed: () {
+
+                bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
+
+                if (correctAnswer == false) {
+                  
+                } else {
+
+                }
+
                 setState(() {
                   scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
                   questionNumber++;
