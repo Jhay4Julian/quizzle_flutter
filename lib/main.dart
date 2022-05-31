@@ -42,6 +42,8 @@ class _QuizPageState extends State<QuizPage> {
     'Coffee is made from berries.',
     'The black box in a plane is black.',
   ];
+  
+  int questionNumber = 0;
 
   List<bool> triviaAnswers = [
     true,
@@ -61,13 +63,13 @@ class _QuizPageState extends State<QuizPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             flex: 6,
             child: Center(
               child: Text(
-                'Questions will go here.',
+                triviaQuestions[questionNumber],
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 27.0,
                   color: Colors.white,
                 )
@@ -78,6 +80,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+                  questionNumber++;
                 });
               },
               child: const Text(
@@ -92,7 +95,8 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  const Icon(Icons.clear, color: Colors.red);
+                  scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
+                  questionNumber++;
                 });
               },
               child: const Text(
@@ -102,6 +106,7 @@ class _QuizPageState extends State<QuizPage> {
               style: TextButton.styleFrom(backgroundColor: Colors.red),
             ),
           ),
+          const SizedBox(height: 10),
           Row(
             children: scoreKeeper,
           ),
