@@ -73,15 +73,16 @@ class _QuizPageState extends State<QuizPage> {
                 bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
 
                 if (correctAnswer == true) {
-
-                } else {
-                  
-                }
-
-                setState(() {
+                  setState(() {
                   scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
                   questionNumber++;
                 });
+                } else {
+                  setState(() {
+                  scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
+                  questionNumber++;
+                });
+                }
               },
               child: const Text(
                 'True',
@@ -98,15 +99,16 @@ class _QuizPageState extends State<QuizPage> {
                 bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
 
                 if (correctAnswer == false) {
-                  
+                  setState(() {
+                  scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+                  questionNumber++;
+                });
                 } else {
-
-                }
-
-                setState(() {
+                  setState(() {
                   scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
                   questionNumber++;
                 });
+                }
               },
               child: const Text(
                 'False',
