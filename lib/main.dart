@@ -13,13 +13,10 @@ class Quizzle extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Quizzle',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
         home: Scaffold(
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.grey.shade800,
           appBar: AppBar(
-            title: const Text('Quizzle'),
+            title: const Center(child: Text('Quizzle')),
           ),
           body: const QuizPage(),
         ));
@@ -48,35 +45,58 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Expanded(flex: 5, child: Text('Questions will go here.')),
-        Expanded(
-          child: TextButton(
-            onPressed: () {
-              setState(() {
-                scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
-              });
-            },
-            child: const Text('True'),
-            style: TextButton.styleFrom(backgroundColor: Colors.green),
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Expanded(
+            flex: 6,
+            child: Center(
+              child: Text(
+                'Questions will go here.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 27.0,
+                  color: Colors.white,
+                )
+                ),
+            )),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+                });
+              },
+              child: const Text(
+                'True',
+                style: TextStyle(fontSize: 24.0, color: Colors.white, fontWeight: FontWeight.w400, letterSpacing: 1.5),
+              ),
+              style: TextButton.styleFrom(backgroundColor: Colors.green),
+            ),
           ),
-        ),
-        Expanded(
-          child: TextButton(
-            onPressed: () {
-              const Icon(Icons.clear, color: Colors.red);
-            },
-            child: const Text('False'),
-            style: TextButton.styleFrom(backgroundColor: Colors.red),
+          const SizedBox(height: 10),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  const Icon(Icons.clear, color: Colors.red);
+                });
+              },
+              child: const Text(
+                'False',
+                style: TextStyle(fontSize: 24.0, color: Colors.white, fontWeight: FontWeight.w400, letterSpacing: 1.5),  
+              ),
+              style: TextButton.styleFrom(backgroundColor: Colors.red),
+            ),
           ),
-        ),
-        Row(
-          children: scoreKeeper,
-        ),
-      ],
+          Row(
+            children: scoreKeeper,
+          ),
+        ],
+      ),
     );
   }
 }
