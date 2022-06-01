@@ -50,7 +50,7 @@ class _QuizPageState extends State<QuizPage> {
             flex: 6,
             child: Center(
               child: Text(
-                triviaBank[questionNumber].triviaQuestion,
+                triviaBank.questionBank[questionNumber].triviaQuestion,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 27.0,
@@ -62,7 +62,7 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
+                bool correctAnswer = triviaBank.questionBank[questionNumber].triviaAnswer;
 
                 if (correctAnswer == true) {
                   setState(() {
@@ -88,7 +88,7 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank[questionNumber].triviaAnswer;
+                bool correctAnswer = triviaBank.questionBank[questionNumber].triviaAnswer;
 
                 if (correctAnswer == false) {
                   setState(() {
