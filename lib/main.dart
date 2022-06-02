@@ -62,7 +62,7 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank.questionBank[questionNumber].triviaAnswer;
+                bool correctAnswer = triviaBank.getTriviaAnswer(questionNumber);
 
                 if (correctAnswer == true) {
                   setState(() {
@@ -88,7 +88,7 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank.questionBank[questionNumber].triviaAnswer;
+                bool correctAnswer = triviaBank.getTriviaAnswer(questionNumber);
 
                 if (correctAnswer == false) {
                   setState(() {
