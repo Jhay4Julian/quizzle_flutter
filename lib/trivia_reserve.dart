@@ -1,7 +1,7 @@
 import 'package:quizzle/question.dart';
 
 class TriviaBank {
-  List<Question> questionBank = [
+  final List<Question> _questionBank = [
     Question(q: 'Alexander Fleming discovered penicillin.', a: true),
     Question(q: 'The black box in a plane is black.', a: false),
     Question(q: 'Harry Styles\' middle name is Edward.', a: true),
