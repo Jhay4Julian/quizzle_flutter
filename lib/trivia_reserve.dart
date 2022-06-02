@@ -27,4 +27,12 @@ class TriviaBank {
   bool getTriviaAnswer(){
     return _questionBank[_questionNumber].triviaAnswer;
   }
+
+  bool triviaFinished() {
+    if (_questionNumber >= _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
