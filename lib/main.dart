@@ -50,7 +50,7 @@ class _QuizPageState extends State<QuizPage> {
             flex: 6,
             child: Center(
               child: Text(
-                triviaBank.questionBank[questionNumber].triviaQuestion,
+                triviaBank.getTriviaQuestion(questionNumber),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 27.0,
