@@ -37,6 +37,19 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
+  void checkAnswer(bool userChoice) {
+    bool correctAnswer = triviaBank.getTriviaAnswer();
+
+    setState(() {
+      if (userChoice == correctAnswer) {
+        scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+      } else {
+        scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
+      }
+      triviaBank.getNextQuestion();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -61,19 +74,6 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank.getTriviaAnswer();
-
-                if (correctAnswer == true) {
-                  setState(() {
-                  scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
-                  triviaBank.getNextQuestion();
-                });
-                } else {
-                  setState(() {
-                  scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
-                  triviaBank.getNextQuestion();
-                });
-                }
               },
               child: const Text(
                 'True',
@@ -86,20 +86,7 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             child: TextButton(
               onPressed: () {
-
-                bool correctAnswer = triviaBank.getTriviaAnswer();
-
-                if (correctAnswer == false) {
-                  setState(() {
-                  scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
-                  triviaBank.getNextQuestion();
-                });
-                } else {
-                  setState(() {
-                  scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
-                  triviaBank.getNextQuestion();
-                });
-                }
+                
               },
               child: const Text(
                 'False',
