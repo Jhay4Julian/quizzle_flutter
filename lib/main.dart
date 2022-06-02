@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizzle/trivia_reserve.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 TriviaBank triviaBank = TriviaBank();
 
