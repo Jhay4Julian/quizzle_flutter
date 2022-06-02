@@ -14,4 +14,8 @@ class TriviaBank {
   String getTriviaQuestion(int questionNumber){
     return _questionBank[questionNumber].triviaQuestion;
   }
+
+  bool getTriviaAnswer(int questionNumber){
+    return _questionBank[questionNumber].triviaAnswer;
+  }
 }
