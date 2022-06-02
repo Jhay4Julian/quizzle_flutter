@@ -35,4 +35,8 @@ class TriviaBank {
       return false;
     }
   }
+
+  void resetTrivia(){
+    _questionNumber = 0;
+  }
 }
