@@ -10,4 +10,8 @@ class TriviaBank {
     Question(q: 'Meghan Markle\'s first name is Rachel.', a: true),
     Question(q: 'Coffee is made from berries.', a: true),
   ];
+
+  String getTriviaQuestion(int questionNumber){
+    return _questionBank[questionNumber].triviaQuestion;
+  }
 }
