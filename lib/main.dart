@@ -73,7 +73,7 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             child: TextButton(
               onPressed: () {
-
+                checkAnswer(true);
               },
               child: const Text(
                 'True',
@@ -86,7 +86,7 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             child: TextButton(
               onPressed: () {
-                
+                checkAnswer(false);
               },
               child: const Text(
                 'False',
