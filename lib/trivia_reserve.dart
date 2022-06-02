@@ -1,6 +1,9 @@
 import 'package:quizzle/question.dart';
 
 class TriviaBank {
+
+  int _questionNumber = 0;
+
   final List<Question> _questionBank = [
     Question(q: 'Alexander Fleming discovered penicillin.', a: true),
     Question(q: 'The black box in a plane is black.', a: false),
@@ -10,6 +13,12 @@ class TriviaBank {
     Question(q: 'Meghan Markle\'s first name is Rachel.', a: true),
     Question(q: 'Coffee is made from berries.', a: true),
   ];
+
+  void getNextQuestion() {
+    if (_questionNumber < _questionBank.length - 1){
+      _questionNumber++;
+    }
+  }
 
   String getTriviaQuestion(int questionNumber){
     return _questionBank[questionNumber].triviaQuestion;
