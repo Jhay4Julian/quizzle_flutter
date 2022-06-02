@@ -20,11 +20,11 @@ class TriviaBank {
     }
   }
 
-  String getTriviaQuestion(int questionNumber){
+  String getTriviaQuestion(){
     return _questionBank[_questionNumber].triviaQuestion;
   }
 
-  bool getTriviaAnswer(int questionNumber){
+  bool getTriviaAnswer(){
     return _questionBank[_questionNumber].triviaAnswer;
   }
 }

@@ -48,7 +48,7 @@ class _QuizPageState extends State<QuizPage> {
             flex: 6,
             child: Center(
               child: Text(
-                triviaBank.getTriviaQuestion(questionNumber),
+                triviaBank.getTriviaQuestion(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 27.0,
@@ -60,17 +60,17 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank.getTriviaAnswer(questionNumber);
+                bool correctAnswer = triviaBank.getTriviaAnswer();
 
                 if (correctAnswer == true) {
                   setState(() {
                   scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
-                  questionNumber++;
+                  triviaBank.getNextQuestion();
                 });
                 } else {
                   setState(() {
                   scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
-                  questionNumber++;
+                  triviaBank.getNextQuestion();
                 });
                 }
               },
@@ -86,17 +86,17 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
 
-                bool correctAnswer = triviaBank.getTriviaAnswer(questionNumber);
+                bool correctAnswer = triviaBank.getTriviaAnswer();
 
                 if (correctAnswer == false) {
                   setState(() {
                   scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
-                  questionNumber++;
+                  triviaBank.getNextQuestion();
                 });
                 } else {
                   setState(() {
                   scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
-                  questionNumber++;
+                  triviaBank.getNextQuestion();
                 });
                 }
               },
