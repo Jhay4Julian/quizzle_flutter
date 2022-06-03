@@ -41,12 +41,20 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = triviaBank.getTriviaAnswer();
 
     setState(() {
-      if (userChoice == correctAnswer) {
-        scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+      if (triviaBank.triviaFinished() == true) {
+        Alert(
+          context: context,
+          title: 'Finished!',
+          desc: 'You\'ve reached the end of this quiz.',
+        ).show();
       } else {
-        scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
+        if (userChoice == correctAnswer) {
+          scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
+        } else {
+          scoreKeeper.add(const Icon(Icons.clear, color: Colors.red));
+        }
+        triviaBank.getNextQuestion();
       }
-      triviaBank.getNextQuestion();
     });
   }
 
@@ -59,17 +67,15 @@ class _QuizPageState extends State<QuizPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            flex: 6,
-            child: Center(
-              child: Text(
-                triviaBank.getTriviaQuestion(),
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 27.0,
-                  color: Colors.white,
-                )
-                ),
-            )),
+              flex: 6,
+              child: Center(
+                child: Text(triviaBank.getTriviaQuestion(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 27.0,
+                      color: Colors.white,
+                    )),
+              )),
           Expanded(
             child: TextButton(
               onPressed: () {
@@ -77,7 +83,11 @@ class _QuizPageState extends State<QuizPage> {
               },
               child: const Text(
                 'True',
-                style: TextStyle(fontSize: 24.0, color: Colors.white, fontWeight: FontWeight.w400, letterSpacing: 1.5),
+                style: TextStyle(
+                    fontSize: 24.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.5),
               ),
               style: TextButton.styleFrom(backgroundColor: Colors.green),
             ),
@@ -90,7 +100,11 @@ class _QuizPageState extends State<QuizPage> {
               },
               child: const Text(
                 'False',
-                style: TextStyle(fontSize: 24.0, color: Colors.white, fontWeight: FontWeight.w400, letterSpacing: 1.5),  
+                style: TextStyle(
+                    fontSize: 24.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.5),
               ),
               style: TextButton.styleFrom(backgroundColor: Colors.red),
             ),
