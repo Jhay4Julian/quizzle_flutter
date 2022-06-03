@@ -60,11 +60,11 @@ class _QuizPageState extends State<QuizPage> {
         Alert(
           context: context,
           title: 'Finished!',
-          desc: 'You\'ve reached the end of this quiz.',
+          desc: 'Your Score: ${finalScore(scoreKeeper, const Icon(Icons.check, color: Colors.green))*10}%',
           buttons: [
             DialogButton(
               child: const Text(
-                "Close",
+                "OK",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
