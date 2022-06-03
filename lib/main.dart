@@ -38,6 +38,20 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
+  int finalScore(List<Icon> scoreKeeper, Icon element) {
+    if  (scoreKeeper.isEmpty) {
+      return 0;
+    }
+
+    int count = 0;
+    for (int i = 0; i < scoreKeeper.length; i++) {
+      if (scoreKeeper[i] == element) {
+        count++;
+      }
+    }
+    return count;
+  }
+
   void checkAnswer(bool userChoice) {
     bool correctAnswer = triviaBank.getTriviaAnswer();
 
