@@ -47,6 +47,16 @@ class _QuizPageState extends State<QuizPage> {
           context: context,
           title: 'Finished!',
           desc: 'You\'ve reached the end of this quiz.',
+          buttons: [
+            DialogButton(
+              child: const Text(
+                "Close",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
         ).show();
 
         triviaBank.resetTrivia();
