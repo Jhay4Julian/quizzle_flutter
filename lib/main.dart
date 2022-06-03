@@ -18,8 +18,9 @@ class Quizzle extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Quizzle',
         home: Scaffold(
-          backgroundColor: Colors.grey.shade800,
+          backgroundColor: Colors.black,
           appBar: AppBar(
+            backgroundColor: Colors.grey.shade800,
             title: const Center(child: Text('Quizzle')),
           ),
           body: const QuizPage(),
@@ -115,6 +116,8 @@ class _QuizPageState extends State<QuizPage> {
           ),
           const SizedBox(height: 10),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: scoreKeeper,
           ),
         ],
