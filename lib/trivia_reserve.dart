@@ -12,6 +12,10 @@ class TriviaBank {
     Question(q: 'There are 14 bones in a human foot.', a: false),
     Question(q: 'Meghan Markle\'s first name is Rachel.', a: true),
     Question(q: 'Coffee is made from berries.', a: true),
+    Question(q: 'Google was originally called "Backrub".', a: true),
+    Question(q: 'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.', a: true),
+    Question(q: 'Thomas Edison discovered gravity.', a: false),
+
   ];
 
   void getNextQuestion() {
