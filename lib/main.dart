@@ -47,6 +47,10 @@ class _QuizPageState extends State<QuizPage> {
           title: 'Finished!',
           desc: 'You\'ve reached the end of this quiz.',
         ).show();
+
+        triviaBank.resetTrivia();
+
+        scoreKeeper = [];
       } else {
         if (userChoice == correctAnswer) {
           scoreKeeper.add(const Icon(Icons.check, color: Colors.green));
