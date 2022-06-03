@@ -1,6 +1,6 @@
 # quizzle
 
-A new Flutter project.
+A true or false trivia app.
 
 ## Getting Started
 
