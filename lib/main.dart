@@ -49,7 +49,7 @@ class _QuizPageState extends State<QuizPage> {
         count++;
       }
     }
-    return count;
+    return count + 1;
   }
 
   void checkAnswer(bool userChoice) {
